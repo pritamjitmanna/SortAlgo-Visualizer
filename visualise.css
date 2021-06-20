@@ -1,0 +1,95 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+    --diff:100;
+}
+.container {
+     /* width: fit-content; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: antiquewhite;
+    flex-direction: column;
+}
+nav{
+    display: flex;
+    padding: 5px;
+    background: #072253;
+    border-radius: 5px;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+
+.flexdir {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    font-size: 20px;
+}
+
+#bub-sort {
+    display: flex;
+    position: relative;
+    width: 700px;
+    /* background-color: aquamarine; */
+    height: 56px;
+    margin: 27px;
+    /* border: 2px solid red; */
+}
+
+.box {
+    border: 1px solid red;
+    position: absolute;
+    font-size: 28px;
+    text-align: center;
+    transition: 1s all;
+    width: 9.5%;
+    height: 56px;
+}
+
+button {
+    padding: 6px 21px;
+}
+
+@media only screen and (max-width:750px) {
+    #bub-sort{
+        width:500px;
+    }
+    :root{
+        --diff:42;
+    }
+    .box{
+        font-size: 18px;
+    }
+}
+
+@media only screen and (max-width:520px) {
+    .flexdir{
+        font-size: 15px;
+    }
+    #bub-sort{
+        width:200px;
+    }
+    .box{
+        height: 40px;
+    }
+}
+@media only screen and (max-width:240px) {
+    #bub-sort{
+        width:150px;
+    }
+    .box{
+        font-size: 10px;
+        height: 27px;
+    }
+}
+@media only screen and (max-width:185px) {
+    #bub-sort{
+        width:130px;
+    }
+    
+}

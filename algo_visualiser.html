@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="visualise.css">
+</head>
+<body>
+    <nav>
+        <button>Generate list</button>
+        <div id="speedrange" class="flexdir">
+            <label for="speed">Speed</label>
+            <input type="range" id="speed" value="100">
+        </div>
+        <div id="typesort" class="flexdir">
+            <label for="type">Select Sorting Type</label>
+            <select name="type" id="type">
+                <option value="None">None</option>
+                <option value="bub">Bubble</option>
+                <option value="sel">Selection</option>
+                <option value="ins">Insertion</option>
+                <option value="mer">Merge</option>
+            </select>
+        </div>
+    </nav>
+    <div class="container">
+        <div id="bub-sort">
+        </div>
+    </div>
+</body>
+<script src="visualise.js"></script>
+
+</html>

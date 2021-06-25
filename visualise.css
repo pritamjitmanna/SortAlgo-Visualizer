@@ -49,6 +49,7 @@ nav{
     flex-direction: column;
     color: #0e0a0a;
     font-size: 20px;
+    margin: 0px 3px;
 }
 
 #bub-sort {
@@ -102,7 +103,7 @@ select{
         --diff:42;
     }
     .box{
-        font-size: 18px;
+        font-size: 15px;
     }
 }
 
@@ -130,5 +131,7 @@ select{
     #bub-sort{
         width:130px;
     }
-    
+    :root{
+        --diff:10;
+    }
 }

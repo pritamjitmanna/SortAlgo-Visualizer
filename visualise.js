@@ -1,7 +1,5 @@
 diff = parseInt(getComputedStyle(document.querySelector(':root')).getPropertyValue('--diff'));
 delayarr = [200, 400]
-delay = 200
-swapdelay = 400
 bubSort = document.getElementById('bub-sort');
 function insertAfter(newNode, existingNode) {
     existingNode.parentNode.insertBefore(newNode, existingNode.nextSibling);
@@ -29,6 +27,8 @@ type.addEventListener('change', () => {
     gridBox = Array.from(gridBox)
     type.disabled = true
     gen.disabled = true
+    delay = Math.ceil(((200 - parseInt(speed.value)) * delayarr[0]) / 100);
+    swapdelay = Math.ceil(((200 - parseInt(speed.value)) * delayarr[1]) / 100);
     if (type.value == 'bub') bub();
     else if (type.value == 'sel') sel();
     else if (type.value == 'ins') ins();
@@ -78,8 +78,8 @@ async function bub() {
                     res();
                 }, delay))
             if (Number(gridBox[j].innerText) > Number(gridBox[j + 1].innerText)) await swap(j, j + 1);
-            gridBox[j].style.backgroundColor = 'aquamarine';
-            gridBox[j + 1].style.backgroundColor = 'aquamarine';
+            gridBox[j].style.backgroundColor = 'inherit';
+            gridBox[j + 1].style.backgroundColor = 'inherit';
         }
         gridBox[i].style.backgroundColor = 'green';
     }
@@ -102,10 +102,10 @@ async function sel() {
             if (Number(gridBox[j].innerText) < val) {
                 val = Number(gridBox[j].innerText);
                 gridBox[j].style.backgroundColor = '#f08585';
-                gridBox[p].style.backgroundColor = 'aquamarine';
+                gridBox[p].style.backgroundColor = 'inherit';
                 p = j;
             }
-            if (p != j) gridBox[j].style.backgroundColor = 'aquamarine';
+            if (p != j) gridBox[j].style.backgroundColor = 'inherit';
         }
         if (p > i) await swap(i, p, 'sel');
         gridBox[i].style.backgroundColor = 'green';
@@ -123,16 +123,14 @@ async function ins() {
                 setTimeout(() => {
                     res();
                 }, delay))
-            if (Number(gridBox[j + 1].innerText) < Number(gridBox[j].innerText)) {
-                await swap(j, j + 1);
-                gridBox[j + 1].style.backgroundColor = 'aquamarine';
-                gridBox[j].style.backgroundColor = 'aquamarine';
-            }
+            if (Number(gridBox[j + 1].innerText) < Number(gridBox[j].innerText)) await swap(j, j + 1);
             else {
-                gridBox[j + 1].style.backgroundColor = 'aquamarine';
-                gridBox[j].style.backgroundColor = 'aquamarine';
+                gridBox[j + 1].style.backgroundColor = 'inherit';
+                gridBox[j].style.backgroundColor = 'inherit';
                 break;
             }
+            gridBox[j + 1].style.backgroundColor = 'inherit';
+            gridBox[j].style.backgroundColor = 'inherit';
         }
 
     }
@@ -160,8 +158,8 @@ async function merge(i, mid, j, str) {
             tempar.push(gridBox[u]);
             await mergeswap(str, cnt, kp + i, u)
             if (u <= mid && v <= j) {
-                gridBox[v].style.background = 'none';
-                gridBox[u].style.background = 'none';
+                gridBox[v].style.backgroundColor = 'inherit';
+                gridBox[u].style.backgroundColor = 'inherit';
             }
             u++;
         }
@@ -169,8 +167,8 @@ async function merge(i, mid, j, str) {
             tempar.push(gridBox[v]);
             await mergeswap(str, cnt, kp + i, v);
             if (u <= mid && v <= j) {
-                gridBox[v].style.background = 'none';
-                gridBox[u].style.background = 'none';
+                gridBox[v].style.backgroundColor = 'inherit';
+                gridBox[u].style.backgroundColor = 'inherit';
             }
             v++;
         }

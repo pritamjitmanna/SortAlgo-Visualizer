@@ -4,7 +4,7 @@
 }
 
 :root{
-    --diff:50;
+    --diff:10;
 }
 .container {
      /* width: fit-content; */
@@ -99,9 +99,6 @@ select{
     #bub-sort{
         width:500px;
     }
-    :root{
-        --diff:42;
-    }
     .box{
         font-size: 15px;
     }
@@ -112,26 +109,23 @@ select{
         font-size: 15px;
     }
     #bub-sort{
-        width:200px;
+        width:350px;
     }
     .box{
         height: 40px;
     }
 }
-@media only screen and (max-width:240px) {
+@media only screen and (max-width:380px) {
     #bub-sort{
-        width:150px;
+        width:212px;
     }
     .box{
         font-size: 10px;
         height: 27px;
     }
 }
-@media only screen and (max-width:185px) {
+@media only screen and (max-width:230px) {
     #bub-sort{
-        width:130px;
-    }
-    :root{
-        --diff:10;
+        width:140px;
     }
 }
